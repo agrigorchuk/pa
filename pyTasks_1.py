@@ -1,5 +1,5 @@
 def printPermutations(inputStr, partStr=''):
-	'''Print all permutations of the word with * -> ahmed, ahme*, ahm*d, ahm**, ah*ed, ah*e*, ah**d, ah***, a*med, a*me*, a*m*d, a*m**, a**ed'''
+    '''Print all permutations of the word with * -> ahmed, ahme*, ahm*d, ahm**, ah*ed, ah*e*, ah**d, ah***, a*med, a*me*, a*m*d, a*m**, a**ed'''
     if len(inputStr) == 0:
         print(partStr)
         return
@@ -8,7 +8,7 @@ def printPermutations(inputStr, partStr=''):
         printPermutations(inputStr[1:], partStr+'*')
 
 def printPemutationsAccToDictionary(inputStr, partStr=''):
-	'''Print all permutations of string representation 123 -> abc, aw, lc'''
+    '''Print all permutations of string representation 123 -> abc, aw, lc'''
     if len(inputStr) == 0:
         print(partStr)
         return
