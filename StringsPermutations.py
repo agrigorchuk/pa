@@ -24,6 +24,29 @@ def printPemutationsAccToDictionary(inputStr, partStr='', resultList = []):
                 # Grab two symbols
                 printPemutationsAccToDictionary(inputStr[2:], partStr+ch2, resultList) 
 
+def lookAndSaySequence(number):
+    result = ""
+ 
+    repeat = number[0]
+    number = number[1:]+" "
+    times = 1
+ 
+    for actual in number:
+        if actual != repeat:
+            result += str(times)+repeat
+            times = 1
+            repeat = actual
+        else:
+            times += 1
+ 
+    return result
+
+num = '1'
+ 
+for i in range(10):
+    print(num)
+    num = lookAndSaySequence(num)
+
 resultList1 = []
 printPemutationsAccToDictionary('123', '', resultList1)
 resultList2 = []
