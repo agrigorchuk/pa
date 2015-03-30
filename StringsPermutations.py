@@ -1,3 +1,21 @@
+def removeComments(text):
+	'''Removes commented text from text Example: asd/*asd*/asd ->asdasd'''
+	COMMENT_START='/*'
+	COMMENT_END='*/'
+	NEW_LINE='\n'
+	startPos = text.find(COMMENT_START)
+	endPos = text.find(COMMENT_END)
+
+	if startPos == -1 or endPos == -1:
+		return text
+	numOfNewLines = 0
+	for currSymbol in text[startPos+2:endPos]: 
+		if currSymbol == NEW_LINE:
+			numOfNewLines += 1
+	return removeComments(text[0:startPos]+NEW_LINE*numOfNewLines+text[endPos+2::])
+
+withoutC = removeComments('a/*a\nasdasdasd\nasd\nasda\nasd*/a asdjfhgaskdjfhgaksjdhfgasdf \n\n/*\nsdfsdfasdf\n*/')
+
 def printPermutations(inputStr, partStr='', resultList = []):
     '''Print all permutations of the word with * -> ahmed, ahme*, ahm*d, ahm**, ah*ed, ah*e*, ah**d, ah***, a*med, a*me*, a*m*d, a*m**, a**ed'''
     if len(inputStr) == 0:
