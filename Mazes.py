@@ -6,7 +6,7 @@ grid = [[0, 0, 0, 0, 0, 1],
         [0, 1, 0, 0, 0, 2]]
 
 def dropSearch(x, y):
-  '''Solving mazes using Python: Simple recursivity and A* search'''
+  '''Solving mazes using simple recursivity called Drop search'''
     if grid[x][y] == 2:
         print ('found at %d,%d' % (x, y))
         return True
